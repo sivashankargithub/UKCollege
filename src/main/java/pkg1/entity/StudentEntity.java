@@ -26,6 +26,8 @@ public class StudentEntity {
 	
 	@OneToMany(mappedBy = "studentId")
 	private List<StudentRoomsEntity> Studentrooms;
+	@OneToMany(mappedBy = "studentId")
+	private List<AuthSEntity> authS;
 	
 	public StudentEntity(long id, String rollNo, String studentName, LocationEntity locationId) {
 		super();
