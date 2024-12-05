@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "e9e4381e-df58-448d-bc94-0a2a6dfeef1d",
+		"name": "UKCollege",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30209566"
+	},
+	"item": [
+		{
+			"name": "/location/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cityName\":\"\",\r\n    \"address\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/location/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"location",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/location/viewAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/location/viewAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"location",
+						"viewAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "locations/viewById/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/locations/viewById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"locations",
+						"viewById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

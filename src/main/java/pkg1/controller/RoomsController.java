@@ -25,7 +25,7 @@ public class RoomsController {
 	public List<RoomsEntity> viewAllRooms(){
 		return rr.findAll();
 	}
-	@GetMapping("/rooms/view/{id}")
+	@GetMapping("/rooms/viewById/{id}")
 	public RoomsEntity viewRoomsById(@PathVariable long id){
 		return rr.findById(id).orElseThrow(() -> new NullPointerException("rooms not exist with id "+id));
 	}

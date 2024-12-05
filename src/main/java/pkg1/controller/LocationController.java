@@ -25,7 +25,7 @@ public class LocationController {
 	public List<LocationEntity> viewAllLocations(){
 		return lr.findAll();
 	}
-	@GetMapping("/locations/view/{id}")
+	@GetMapping("/locations/viewById/{id}")
 	public LocationEntity viewLocationsById(@PathVariable long id){
 		return lr.findById(id).orElseThrow(() -> new NullPointerException("location not exist with id "+id));
 	}
