@@ -15,9 +15,11 @@ public class StudentRoomsEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "student_id")
 	private StudentEntity studentId;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "room_id")
 	private RoomsEntity roomsId;

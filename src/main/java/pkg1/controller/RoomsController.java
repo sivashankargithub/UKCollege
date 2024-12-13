@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import pkg1.dto.RoomsDto;
+import pkg1.entity.LocationEntity;
 import pkg1.entity.RoomsEntity;
+import pkg1.repo.LocationRepo;
 import pkg1.repo.RoomsRepo;
 
 @RestController
@@ -17,9 +20,17 @@ public class RoomsController {
 	@Autowired
 	RoomsRepo rr;
 	
+	@Autowired
+	LocationRepo lr;
+	
 	@PostMapping("/rooms/add")
-	public RoomsEntity addRooms(@RequestBody RoomsEntity re) {
-		return rr.save(re);
+	public RoomsEntity addRooms(@RequestBody RoomsDto rdto) {
+		long locationId=rdto.getLocationId();
+		LocationEntity location = lr.findById(locationId).orElseThrow(()-> new NullPointerException("No Location found with id "+locationId));
+		RoomsEntity rooms = new RoomsEntity();
+		rooms.setRoomNo(rdto.getRoom().getRoomNo());
+		rooms.setLocationId(location);
+		return rr.save(rooms);
 	}
 	@GetMapping("/rooms/viewAll")
 	public List<RoomsEntity> viewAllRooms(){
